@@ -18,6 +18,10 @@
 	<h1>$.browser polyfill</h1>
 	
 	<pre></pre>
+
+	<hr />
+
+	<div id="orientation"></div>
 	
 
 	<script type="text/javascript">
@@ -27,6 +31,13 @@
 			$html.push( i +': '+ v );
 		} );
 		$( 'pre' ).append( $html.join( "\n" ) );
+
+		if( $.browser.is_mobile ){
+			$( '#orientation' ).html( 'Orientation: '+ $.browser.orientation );
+			$( window ).on( 'resize', function(){
+				$( '#orientation' ).html( 'Orientation: '+ $.browser.orientation );
+			} );
+		}
 	} );
 	</script>
 </body>
