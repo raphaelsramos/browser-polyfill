@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang="pt-BR"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="pt-BR"><!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>$.browser polyfill</title>
+	<meta name="author" content="Raphael Ramos, www.raphaelramos.com.br" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+	
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="jq.browser.polyfill.js"></script>
+	
+	<link rel="stylesheet" href="normalize.css" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<h1>$.browser polyfill</h1>
+	
+	<pre></pre>
+	
+
+	<script type="text/javascript">
+	$( function(){
+		var $html = [];
+		$.each( $.browser, function( i, v ){
+			$html.push( i +': '+ v );
+		} );
+		$( 'pre' ).append( $html.join( "\n" ) );
+	} );
+	</script>
+</body>
+</html>
